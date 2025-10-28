@@ -3,12 +3,28 @@ package vista;
 import javax.swing.*;
 
 public class Ventana extends JFrame {
-	private PanelPrincipal panelPrincipal;
+	private JPanel panelActual;
+	
 	public Ventana() {
-		panelPrincipal = new PanelPrincipal();
-		setContentPane(panelPrincipal);
-		pack();
+		PanelInicial panelInicial = new PanelInicial(this);
+		cambiarPanel(panelInicial);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setVisible(true);
+		pack();
+		setLocationRelativeTo(null);
+		setVisible(true);
+	}
+	
+	public void cambiarPanel(JPanel nuevoPanel) {
+		if (panelActual != null) {
+			remove(panelActual);
+		}
+		panelActual = nuevoPanel;
+		setContentPane(nuevoPanel);
+		revalidate();
+		repaint();
+		if (panelActual.isPreferredSizeSet()) {
+			pack();
+			setLocationRelativeTo(null);
+		}
 	}
 }

@@ -5,25 +5,35 @@ import modelo.Observador;
 import javax.swing.*;
 
 public class ImagenObjetoJuego extends JLabel implements Observador {
-    private int ancho;
-    private int alto;
+    protected int anchoInicial;
+    protected int altoInicial;
     
 	public ImagenObjetoJuego(int ancho, int alto) {
-		this.ancho = ancho;
-		this.alto = alto;
+		this.anchoInicial = ancho;
+		this.altoInicial = alto;
+		setSize(ancho, alto);
 	}
 
     public void mover(int x, int y) {
-        setBounds(x, y, ancho, alto);
+        setBounds(x, y, getAncho(), getAlto());
     }
 
 	public int getAncho() {
-		return ancho;
+		return getWidth();
 	}
 
 	public int getAlto() {
-		return alto;
+		return getHeight();
 	}
     
+	public void setAncho(int ancho) {
+		this.anchoInicial = ancho;
+		setSize(ancho, getAlto());
+	}
+	
+	public void setAlto(int alto) {
+		this.altoInicial = alto;
+		setSize(getAncho(), alto);
+	}
     
 }

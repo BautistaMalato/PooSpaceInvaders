@@ -30,11 +30,9 @@ public abstract class ObjetoJuego {
 	}
 	
 	public void mover(int x, int y) {
-		if (x < xMax) {
-			this.x = x;
-			this.y = y;
-			observador.mover(x, y);
-		}
+		this.x = x;
+		this.y = y;
+		observador.mover(x, y);
 	}
 	
 	public int getPosicionMediaX() {
@@ -43,6 +41,14 @@ public abstract class ObjetoJuego {
 
 	public int getY() {
 		return y;
+	}
+	
+	public int getX() {
+		return x;
+	}
+	
+	public int getVelocidad() {
+		return velocidad;
 	}
 	
 	public int getAnchoEspacio() {
