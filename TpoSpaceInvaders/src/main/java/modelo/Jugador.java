@@ -11,8 +11,38 @@ public class Jugador {
         this.vidas = 3;
     }
 
-    public void agregarPuntaje(int puntos) { }
-    public void perderVida() { }
+    public void agregarPuntaje(int puntos) { 
+    	this.puntaje+=puntos;
+    }
+    public void perderVida() {
+    	if(vidas>0) {
+    		vidas--;
+    	}
+    }
+     // Getters y setters
+    
+    public string getnombre() {
+    	return nombre;
+    }
+    public int getpuntaje() {
+    	return puntaje;
+    }
+    
+    public void setpuntaje(int puntaje) {
+    	this.puntaje = puntaje;
+    }
+    public int getvida() {
+    	return vidas;
+    }
+    
+     
+    
+    public void setvida(int vidas) {
+    	this.vidas=vidas;
+    }
+     
 
-    // Getters y setters
+    
 }
+
+
