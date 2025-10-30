@@ -19,30 +19,27 @@ public class Jugador {
     		vidas--;
     	}
     }
-     // Getters y setters
     
-    public string getnombre() {
+    public String getNombre() {
     	return nombre;
     }
-    public int getpuntaje() {
+    public int getPuntaje() {
     	return puntaje;
     }
     
-    public void setpuntaje(int puntaje) {
+    public void setPuntaje(int puntaje) {
     	this.puntaje = puntaje;
     }
-    public int getvida() {
+    public int getVida() {
     	return vidas;
     }
     
      
     
-    public void setvida(int vidas) {
+    public void setVida(int vidas) {
     	this.vidas=vidas;
     }
      
 
-    
+    // Getters y setters
 }
-
-
